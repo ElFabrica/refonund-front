@@ -2,7 +2,6 @@ import { useActionState } from "react";
 import { z, ZodError } from "zod";
 import { Button } from "../components/button";
 import { Input } from "../components/input";
-import { toast } from "sonner";
 import { AxiosError } from "axios";
 import { api } from "../services/api";
 import { useAuth } from "../context/AuthContext";
@@ -14,7 +13,7 @@ const signInSchema = z.object({
 
 export function SignIn() {
   const auth = useAuth();
-  const [state, formAction, isLoading] = useActionState(onSubmit, null);
+  const [, formAction, isLoading] = useActionState(onSubmit, null);
 
   async function onSubmit(_: any, formData: FormData) {
     try {

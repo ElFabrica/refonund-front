@@ -9,7 +9,6 @@ import { Upload } from "../components/upload";
 import { Button } from "../components/button";
 import { useNavigate, useParams } from "react-router";
 import { z, ZodError } from "zod";
-import { toast } from "sonner";
 import { AxiosError } from "axios";
 import { api } from "../services/api";
 import { useAuth } from "../context/AuthContext";
@@ -63,7 +62,7 @@ export function Refund() {
           headers: {
             Authorization: `Bearer ${auth.session?.token}`,
           },
-        }
+        },
       );
 
       navigation("/confirm", { state: { fromSubmit: true } });
