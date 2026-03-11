@@ -121,7 +121,7 @@ export function Refund() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-gray-500 w-full rounded-xl flex flex-col p-10 gap-6 lg:min-w-[512px]"
+      className="bg-gray-500 w-full rounded-xl flex flex-col p-10 gap-6 lg:min-w-lg"
     >
       <header>
         <h1 className="text-xl font-bold text-gray-100">
@@ -165,7 +165,7 @@ export function Refund() {
 
       {params.id ? (
         <a
-          href={`http://localhost:3333/uploads/${fileURL}`}
+          href={`${import.meta.env.VITE_API_URL}/uploads/${fileURL}`}
           target="_blank"
           className="text-sm text-green-100 font-semibold flex items-center justify-center gap-2 hover:opacity-70"
         >

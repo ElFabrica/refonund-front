@@ -36,7 +36,7 @@ export function Dashboard() {
           headers: {
             Authorization: `Bearer ${auth.session?.token}`,
           },
-        }
+        },
       );
 
       setRefunds(
@@ -46,7 +46,7 @@ export function Dashboard() {
           category: CATEGORIES[refund.category].name,
           amount: formatCurrency(refund.amount),
           categoryImg: CATEGORIES[refund.category].icon,
-        }))
+        })),
       );
 
       setTotalOfPage(response.data.pagination.totalPages);
@@ -83,12 +83,12 @@ export function Dashboard() {
   }, [page]);
 
   return (
-    <div className="bg-gray-500 rounded-xl p-10 md:min-w-[768px]">
+    <div className="bg-gray-500 rounded-xl p-10 md:min-w-3xl">
       <h1 className="text-gray-100 font-bold text-xl flex-1">Solicitações</h1>
 
       <form
         onSubmit={onSubmit}
-        className="flex items-center justify-between  pb-6 border-b-[1px] border-b-gray-400 md:flex-row gap-2 mt-6"
+        className="flex items-center justify-between  pb-6 border-b border-b-gray-400 md:flex-row gap-2 mt-6"
       >
         <Input
           placeholder="Pesquisar"
@@ -99,7 +99,7 @@ export function Dashboard() {
         </Button>
       </form>
 
-      <div className="my-6 flex flex-col gap-4 max-h-[342px] overflow-y-scroll">
+      <div className="my-6 flex flex-col gap-4 max-h-85.5 overflow-y-scroll">
         {refunds.map((refund) => (
           <RefundItem
             key={refund.id}
